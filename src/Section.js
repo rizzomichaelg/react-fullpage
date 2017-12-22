@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 class Section extends React.Component {
@@ -13,7 +13,7 @@ class Section extends React.Component {
 
     handleResize() {
         this.setState({
-            windowHeight: window.innerHeight
+            windowHeight: window.innerHeight,
         });
     }
 

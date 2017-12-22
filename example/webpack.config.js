@@ -1,11 +1,10 @@
 module.exports = {
 	cache: true,
-	debug: true,
 	entry: [
 		__dirname + '/demo'
 	],
-	publicPath: __dirname,
 	output: {
+		publicPath: __dirname,
 		path: __dirname,
 		filename: 'bundle.js'
 	},
