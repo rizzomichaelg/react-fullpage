@@ -26,17 +26,17 @@
   },
   "homepage": "https://github.com/subtirelumihail/react-fullpage",
   "dependencies": {
-    "@babel/cli": "^7.0.0-beta.35",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-dom": "16.2.0"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.35",
-    "@babel/node": "7.0.0-beta.35",
-    "@babel/preset-env": "7.0.0-beta.35",
-    "@babel/preset-react": "7.0.0-beta.35",
-    "@babel/preset-stage-2": "7.0.0-beta.35",
+    "@babel/cli": "^7.0.0-beta.36",
+    "@babel/core": "7.0.0-beta.36",
+    "@babel/node": "7.0.0-beta.36",
+    "@babel/preset-env": "7.0.0-beta.36",
+    "@babel/preset-react": "7.0.0-beta.36",
+    "@babel/preset-stage-2": "7.0.0-beta.36",
     "babel-loader": "8.0.0-beta.0",
     "css-loader": "0.28.7",
     "webpack": "3.10.0",

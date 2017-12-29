@@ -1013,76 +1013,107 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-const app = document.querySelector('#app');
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-class Example extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var app = document.querySelector('#app');
+
+var Example =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Example, _React$Component);
+
+  function Example(props) {
+    var _this;
+
+    _classCallCheck(this, Example);
+
+    _this = _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).call(this, props));
+    _this.state = {
       current: 0
     };
+    return _this;
   }
 
-  render() {
-    const options = {
-      sectionClassName: 'section',
-      anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
-      scrollBar: false,
-      navigation: true,
-      verticalAlign: false,
-      sectionPaddingTop: '50px',
-      sectionPaddingBottom: '50px',
-      arrowNavigation: true,
-      scrollCallback: states => this.setState({
-        current: states.activeSection
-      })
-    };
-    const {
-      current
-    } = this.state;
-    return React.createElement("div", null, React.createElement(_index.Header, null, React.createElement("a", {
-      href: "#sectionOne",
-      className: "opa"
-    }, "Section One"), React.createElement("a", {
-      href: "#sectionTwo"
-    }, "Section Two"), React.createElement("a", {
-      href: "#sectionThree"
-    }, "Section Three")), React.createElement(_index.Footer, null, React.createElement("a", {
-      href: ""
-    }, "Dcoumentation"), React.createElement("a", {
-      href: ""
-    }, "Example Source"), React.createElement("a", {
-      href: ""
-    }, "About")), React.createElement(_index.SectionsContainer, _extends({
-      className: "container"
-    }, options, {
-      activeSection: current
-    }), React.createElement(_index.Section, {
-      className: "custom-section",
-      verticalAlign: "true",
-      color: "#69D2E7"
-    }, "Page 1"), React.createElement(_index.Section, {
-      color: "#A7DBD8"
-    }, "Page 2"), React.createElement(_index.Section, {
-      color: "#E0E4CC"
-    }, "Page 3")), React.createElement("div", {
-      className: "btnGroup"
-    }, React.createElement("button", {
-      onClick: () => this.setState({
-        current: current - 1
-      }),
-      disabled: current === 0
-    }, "pre"), React.createElement("button", {
-      onClick: () => this.setState({
-        current: current + 1
-      }),
-      disabled: current === 2
-    }, "next")));
-  }
+  _createClass(Example, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-}
+      var options = {
+        sectionClassName: 'section',
+        anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
+        scrollBar: false,
+        navigation: true,
+        verticalAlign: false,
+        sectionPaddingTop: '50px',
+        sectionPaddingBottom: '50px',
+        arrowNavigation: true,
+        scrollCallback: function scrollCallback(states) {
+          return _this2.setState({
+            current: states.activeSection
+          });
+        }
+      };
+      var current = this.state.current;
+      return React.createElement("div", null, React.createElement(_index.Header, null, React.createElement("a", {
+        href: "#sectionOne",
+        className: "opa"
+      }, "Section One"), React.createElement("a", {
+        href: "#sectionTwo"
+      }, "Section Two"), React.createElement("a", {
+        href: "#sectionThree"
+      }, "Section Three")), React.createElement(_index.Footer, null, React.createElement("a", {
+        href: ""
+      }, "Dcoumentation"), React.createElement("a", {
+        href: ""
+      }, "Example Source"), React.createElement("a", {
+        href: ""
+      }, "About")), React.createElement(_index.SectionsContainer, _extends({
+        className: "container"
+      }, options, {
+        activeSection: current
+      }), React.createElement(_index.Section, {
+        className: "custom-section",
+        verticalAlign: "true",
+        color: "#69D2E7"
+      }, "Page 1"), React.createElement(_index.Section, {
+        color: "#A7DBD8"
+      }, "Page 2"), React.createElement(_index.Section, {
+        color: "#E0E4CC"
+      }, "Page 3")), React.createElement("div", {
+        className: "btnGroup"
+      }, React.createElement("button", {
+        onClick: function onClick() {
+          return _this2.setState({
+            current: current - 1
+          });
+        },
+        disabled: current === 0
+      }, "pre"), React.createElement("button", {
+        onClick: function onClick() {
+          return _this2.setState({
+            current: current + 1
+          });
+        },
+        disabled: current === 2
+      }, "next")));
+    }
+  }]);
+
+  return Example;
+}(React.Component);
 
 _reactDom.default.render(React.createElement(Example, null), app);
 
@@ -18490,6 +18521,8 @@ module.exports = {
 "use strict";
 
 
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18505,376 +18538,497 @@ function _interopRequireDefault(obj) {
   };
 }
 
-class SectionsContainer extends _react.default.Component {
-  constructor(props) {
-    super(props);
-    Object.defineProperty(this, "_resetScrollTimer", {
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+var SectionsContainer =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SectionsContainer, _React$Component);
+
+  function SectionsContainer(props) {
+    var _this;
+
+    _classCallCheck(this, SectionsContainer);
+
+    _this = _possibleConstructorReturn(this, (SectionsContainer.__proto__ || Object.getPrototypeOf(SectionsContainer)).call(this, props));
+    Object.defineProperty(_assertThisInitialized(_this), "_resetScrollTimer", {
       configurable: true,
       enumerable: true,
       writable: true,
       value: void 0
     });
-    Object.defineProperty(this, "_childrenLength", {
+    Object.defineProperty(_assertThisInitialized(_this), "_childrenLength", {
       configurable: true,
       enumerable: true,
       writable: true,
       value: void 0
     });
-    this.state = {
+    _this.state = {
       activeSection: props.activeSection,
       scrollingStarted: false,
       sectionScrolledPosition: 0,
       windowHeight: 0
     };
-    this._handleMouseWheel = this._handleMouseWheel.bind(this);
-    this._handleAnchor = this._handleAnchor.bind(this);
-    this._handleResize = this._handleResize.bind(this);
-    this._handleArrowKeys = this._handleArrowKeys.bind(this);
+    _this._handleMouseWheel = _this._handleMouseWheel.bind(_assertThisInitialized(_this));
+    _this._handleAnchor = _this._handleAnchor.bind(_assertThisInitialized(_this));
+    _this._handleResize = _this._handleResize.bind(_assertThisInitialized(_this));
+    _this._handleArrowKeys = _this._handleArrowKeys.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
-  getChildContext() {
-    return {
-      verticalAlign: this.props.verticalAlign,
-      sectionClassName: this.props.sectionClassName,
-      sectionPaddingTop: this.props.sectionPaddingTop,
-      sectionPaddingBottom: this.props.sectionPaddingBottom
-    };
-  }
+  _createClass(SectionsContainer, [{
+    key: "getChildContext",
+    value: function getChildContext() {
+      return {
+        verticalAlign: this.props.verticalAlign,
+        sectionClassName: this.props.sectionClassName,
+        sectionPaddingTop: this.props.sectionPaddingTop,
+        sectionPaddingBottom: this.props.sectionPaddingBottom
+      };
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this._clearResetScrollTimer();
 
-  componentWillUnmount() {
-    this._clearResetScrollTimer();
+      this._removeDefaultEventListeners();
 
-    this._removeDefaultEventListeners();
+      this._removeMouseWheelEventHandlers();
 
-    this._removeMouseWheelEventHandlers();
+      this._removeOverflowFromBody();
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this._childrenLength = this.props.children.length;
 
-    this._removeOverflowFromBody();
-  }
+      this._handleResize();
 
-  componentDidMount() {
-    this._childrenLength = this.props.children.length;
+      window.addEventListener('resize', this._handleResize);
 
-    this._handleResize();
+      if (!this.props.scrollBar) {
+        this._addCSS3Scroll();
 
-    window.addEventListener('resize', this._handleResize);
-
-    if (!this.props.scrollBar) {
-      this._addCSS3Scroll();
-
-      this._handleAnchor(); //Go to anchor in case we found it in the URL
+        this._handleAnchor(); //Go to anchor in case we found it in the URL
 
 
-      window.addEventListener('hashchange', this._handleAnchor, false); //Add an event to watch the url hash changes
+        window.addEventListener('hashchange', this._handleAnchor, false); //Add an event to watch the url hash changes
 
-      if (this.props.arrowNavigation) {
-        window.addEventListener('keydown', this._handleArrowKeys);
-      }
+        if (this.props.arrowNavigation) {
+          window.addEventListener('keydown', this._handleArrowKeys);
+        }
 
-      if (this.props.touchNavigation) {
-        this._handleTouchNav();
+        if (this.props.touchNavigation) {
+          this._handleTouchNav();
+        }
       }
     }
-  }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.activeSection !== nextProps.activeSection) {
+        this.setState({
+          activeSection: nextProps.activeSection
+        });
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.activeSection !== nextProps.activeSection) {
-      this.setState({
-        activeSection: nextProps.activeSection
+        this._setAnchor(nextProps.activeSection);
+
+        this._handleSectionTransition(nextProps.activeSection);
+
+        this._addActiveClass();
+      }
+    }
+  }, {
+    key: "_removeDefaultEventListeners",
+    value: function _removeDefaultEventListeners() {
+      window.removeEventListener('resize', this._handleResize);
+      window.removeEventListener('hashchange', this._handleAnchor);
+
+      if (this.props.arrowNavigation) {
+        window.removeEventListener('keydown', this._handleArrowKeys);
+      }
+    }
+  }, {
+    key: "_addCSS3Scroll",
+    value: function _addCSS3Scroll() {
+      this._addOverflowToBody();
+
+      this._addMouseWheelEventHandlers();
+    }
+  }, {
+    key: "_addActiveClass",
+    value: function _addActiveClass() {
+      this._removeActiveClass();
+
+      var hash = window.location.hash.substring(1);
+      var activeLinks = document.querySelectorAll("a[href=\"#".concat(hash, "\"]"));
+
+      for (var i = 0; i < activeLinks.length; i++) {
+        activeLinks[i].className = activeLinks[i].className + (activeLinks[i].className.length > 0 ? ' ' : '') + "".concat(this.props.activeClass);
+      }
+    }
+  }, {
+    key: "_removeActiveClass",
+    value: function _removeActiveClass() {
+      var activeLinks = document.querySelectorAll("a:not([href=\"#".concat(this.props.anchors[this.state.activeSection], "\"])"));
+
+      for (var i = 0; i < activeLinks.length; i++) {
+        activeLinks[i].className = activeLinks[i].className.replace(/\b ?active/g, '');
+      }
+    }
+  }, {
+    key: "_addChildrenWithAnchorId",
+    value: function _addChildrenWithAnchorId() {
+      var _this2 = this;
+
+      var index = 0;
+      return _react.default.Children.map(this.props.children, function (child) {
+        var id = _this2.props.anchors[index];
+        index++;
+
+        if (id) {
+          return _react.default.cloneElement(child, {
+            id: id
+          });
+        } else {
+          return child;
+        }
       });
+    }
+  }, {
+    key: "_addOverflowToBody",
+    value: function _addOverflowToBody() {
+      document.querySelector('body').style.overflow = 'hidden';
+    }
+  }, {
+    key: "_removeOverflowFromBody",
+    value: function _removeOverflowFromBody() {
+      document.querySelector('body').style.overflow = 'initial';
+    }
+  }, {
+    key: "_addMouseWheelEventHandlers",
+    value: function _addMouseWheelEventHandlers() {
+      window.addEventListener('mousewheel', this._handleMouseWheel, false);
+      window.addEventListener('DOMMouseScroll', this._handleMouseWheel, false);
+    }
+  }, {
+    key: "_removeMouseWheelEventHandlers",
+    value: function _removeMouseWheelEventHandlers() {
+      window.removeEventListener('mousewheel', this._handleMouseWheel);
+      window.removeEventListener('DOMMouseScroll', this._handleMouseWheel);
+    }
+  }, {
+    key: "_handleMouseWheel",
+    value: function _handleMouseWheel(event) {
+      var e = window.event || event; // old IE support
 
-      this._setAnchor(nextProps.activeSection);
+      var delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
+      var activeSection = this.state.activeSection - delta;
 
-      this._handleSectionTransition(nextProps.activeSection);
+      if (this.state.scrollingStarted || activeSection < 0 || this._childrenLength === activeSection) {
+        return false;
+      }
+
+      this._setAnchor(activeSection);
+
+      this._handleSectionTransition(activeSection);
 
       this._addActiveClass();
     }
-  }
-
-  _removeDefaultEventListeners() {
-    window.removeEventListener('resize', this._handleResize);
-    window.removeEventListener('hashchange', this._handleAnchor);
-
-    if (this.props.arrowNavigation) {
-      window.removeEventListener('keydown', this._handleArrowKeys);
-    }
-  }
-
-  _addCSS3Scroll() {
-    this._addOverflowToBody();
-
-    this._addMouseWheelEventHandlers();
-  }
-
-  _addActiveClass() {
-    this._removeActiveClass();
-
-    let hash = window.location.hash.substring(1);
-    let activeLinks = document.querySelectorAll(`a[href="#${hash}"]`);
-
-    for (let i = 0; i < activeLinks.length; i++) {
-      activeLinks[i].className = activeLinks[i].className + (activeLinks[i].className.length > 0 ? ' ' : '') + `${this.props.activeClass}`;
-    }
-  }
-
-  _removeActiveClass() {
-    let activeLinks = document.querySelectorAll(`a:not([href="#${this.props.anchors[this.state.activeSection]}"])`);
-
-    for (let i = 0; i < activeLinks.length; i++) {
-      activeLinks[i].className = activeLinks[i].className.replace(/\b ?active/g, '');
-    }
-  }
-
-  _addChildrenWithAnchorId() {
-    let index = 0;
-    return _react.default.Children.map(this.props.children, child => {
-      let id = this.props.anchors[index];
-      index++;
-
-      if (id) {
-        return _react.default.cloneElement(child, {
-          id: id
-        });
-      } else {
-        return child;
-      }
-    });
-  }
-
-  _addOverflowToBody() {
-    document.querySelector('body').style.overflow = 'hidden';
-  }
-
-  _removeOverflowFromBody() {
-    document.querySelector('body').style.overflow = 'initial';
-  }
-
-  _addMouseWheelEventHandlers() {
-    window.addEventListener('mousewheel', this._handleMouseWheel, false);
-    window.addEventListener('DOMMouseScroll', this._handleMouseWheel, false);
-  }
-
-  _removeMouseWheelEventHandlers() {
-    window.removeEventListener('mousewheel', this._handleMouseWheel);
-    window.removeEventListener('DOMMouseScroll', this._handleMouseWheel);
-  }
-
-  _handleMouseWheel(event) {
-    const e = window.event || event; // old IE support
-
-    const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
-    const activeSection = this.state.activeSection - delta;
-
-    if (this.state.scrollingStarted || activeSection < 0 || this._childrenLength === activeSection) {
-      return false;
-    }
-
-    this._setAnchor(activeSection);
-
-    this._handleSectionTransition(activeSection);
-
-    this._addActiveClass();
-  }
-
-  _handleResize() {
-    const position = 0 - this.state.activeSection * window.innerHeight;
-    this.setState({
-      scrollingStarted: true,
-      windowHeight: window.innerHeight,
-      sectionScrolledPosition: position
-    });
-
-    this._resetScroll();
-  }
-
-  _handleSectionTransition(index) {
-    const position = 0 - index * this.state.windowHeight;
-
-    if (!this.props.anchors.length || index === -1 || index >= this.props.anchors.length) {
-      return false;
-    }
-
-    this.setState({
-      scrollingStarted: true,
-      activeSection: index,
-      sectionScrolledPosition: position
-    });
-
-    this._resetScroll();
-
-    this._handleScrollCallback();
-  }
-
-  _handleArrowKeys(e) {
-    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-      e.preventDefault(); // Prevent unwanted scrolling on Firefox
-    }
-
-    const event = window.event ? window.event : e;
-    const activeSection = event.keyCode === 38 || event.keyCode === 37 ? this.state.activeSection - 1 : event.keyCode === 40 || event.keyCode === 39 ? this.state.activeSection + 1 : -1;
-
-    if (this.state.scrollingStarted || activeSection < 0 || this._childrenLength === activeSection) {
-      return false;
-    }
-
-    this._setAnchor(activeSection);
-
-    this._handleSectionTransition(activeSection);
-
-    this._addActiveClass();
-  }
-
-  _handleTouchNav() {
-    var that = this;
-
-    var touchsurface = document.querySelector("." + this.props.className),
-        swipedir,
-        startX,
-        startY,
-        dist,
-        distX,
-        distY,
-        threshold = 50,
-        //required min distance traveled to be considered swipe
-    restraint = 100,
-        // maximum distance allowed at the same time in perpendicular direction
-    allowedTime = 1000,
-        // maximum time allowed to travel that distance
-    elapsedTime,
-        startTime,
-        handleswipe = function (swipedir) {
-      console.log(swipedir);
-    };
-
-    touchsurface.addEventListener('touchstart', function (e) {
-      var touchobj = e.changedTouches[0];
-      swipedir = 'none';
-      dist = 0;
-      startX = touchobj.pageX;
-      startY = touchobj.pageY;
-      startTime = new Date().getTime(); // record time when finger first makes contact with surface
-      // e.preventDefault()
-    }, false);
-    touchsurface.addEventListener('touchmove', function (e) {
-      e.preventDefault(); // prevent scrolling when inside DIV
-    }, false);
-    touchsurface.addEventListener('touchend', function (e) {
-      var touchobj = e.changedTouches[0];
-      distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
-
-      distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
-
-      elapsedTime = new Date().getTime() - startTime; // get time elapsed
-
-      if (elapsedTime <= allowedTime) {
-        // first condition for awipe met
-        if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) {
-          // 2nd condition for vertical swipe met
-          swipedir = distY < 0 ? 'up' : 'down'; // if dist traveled is negative, it indicates up swipe
-
-          var direction = swipedir === 'down' ? that.state.activeSection - 1 : swipedir === 'up' ? that.state.activeSection + 1 : -1;
-          var hash = that.props.anchors[direction];
-
-          if (!that.props.anchors.length || hash) {
-            window.location.hash = '#' + hash;
-          }
-
-          that._handleSectionTransition(direction);
-        }
-      }
-
-      handleswipe(swipedir); // e.preventDefault()
-    }, false);
-  }
-
-  _handleAnchor() {
-    const hash = window.location.hash.substring(1);
-    const activeSection = this.props.anchors.indexOf(hash);
-
-    if (this.state.activeSection !== activeSection) {
-      setTimeout(() => {
-        this._handleSectionTransition(activeSection);
-
-        this._addActiveClass();
-      });
-    }
-  }
-
-  _setAnchor(index) {
-    const hash = this.props.anchors[index];
-
-    if (!this.props.anchors.length || hash) {
-      window.location.hash = '#' + hash;
-    }
-  }
-
-  _handleScrollCallback() {
-    if (this.props.scrollCallback) {
-      setTimeout(() => this.props.scrollCallback(this.state), 0);
-    }
-  }
-
-  _resetScroll() {
-    this._clearResetScrollTimer();
-
-    this._resetScrollTimer = setTimeout(() => {
+  }, {
+    key: "_handleResize",
+    value: function _handleResize() {
+      var position = 0 - this.state.activeSection * window.innerHeight;
       this.setState({
-        scrollingStarted: false
+        scrollingStarted: true,
+        windowHeight: window.innerHeight,
+        sectionScrolledPosition: position
       });
-    }, this.props.delay + 300);
-  }
 
-  _clearResetScrollTimer() {
-    if (this._resetScrollTimer) {
-      clearTimeout(this._resetScrollTimer);
+      this._resetScroll();
     }
-  }
+  }, {
+    key: "_handleSectionTransition",
+    value: function _handleSectionTransition(index) {
+      var position = 0 - index * this.state.windowHeight;
 
-  renderNavigation() {
-    let navigationStyle = {
-      position: 'fixed',
-      zIndex: '10',
-      right: '20px',
-      top: '50%',
-      transform: 'translate(-50%, -50%)'
-    };
-    const anchors = this.props.anchors.map((link, index) => {
-      const anchorStyle = {
-        display: 'block',
-        margin: '10px',
-        borderRadius: '100%',
-        backgroundColor: '#556270',
-        padding: '5px',
-        transition: 'all 0.2s',
-        transform: this.state.activeSection === index ? 'scale(1.3)' : 'none'
-      };
-      return _react.default.createElement("a", {
-        href: `#${link}`,
-        key: index,
-        className: this.props.navigationAnchorClass || 'Navigation-Anchor',
-        style: this.props.navigationAnchorClass ? null : anchorStyle
+      if (!this.props.anchors.length || index === -1 || index >= this.props.anchors.length) {
+        return false;
+      }
+
+      this.setState({
+        scrollingStarted: true,
+        activeSection: index,
+        sectionScrolledPosition: position
       });
-    });
-    return _react.default.createElement("div", {
-      className: this.props.navigationClass || 'Navigation',
-      style: this.props.navigationClass ? null : navigationStyle
-    }, anchors);
-  }
 
-  render() {
-    let containerStyle = {
-      height: '100%',
-      width: '100%',
-      position: 'relative',
-      transform: `translate3d(0px, ${this.state.sectionScrolledPosition}px, 0px)`,
-      transition: `all ${this.props.delay}ms ease`
-    };
-    return _react.default.createElement("div", null, _react.default.createElement("div", {
-      className: this.props.className,
-      style: containerStyle
-    }, this.props.scrollBar ? this._addChildrenWithAnchorId() : this.props.children), this.props.navigation && !this.props.scrollBar ? this.renderNavigation() : null);
-  }
+      this._resetScroll();
 
-}
+      this._handleScrollCallback();
+    }
+  }, {
+    key: "_handleArrowKeys",
+    value: function _handleArrowKeys(e) {
+      if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault(); // Prevent unwanted scrolling on Firefox
+      }
+
+      var event = window.event ? window.event : e;
+      var activeSection = event.keyCode === 38 || event.keyCode === 37 ? this.state.activeSection - 1 : event.keyCode === 40 || event.keyCode === 39 ? this.state.activeSection + 1 : -1;
+
+      if (this.state.scrollingStarted || activeSection < 0 || this._childrenLength === activeSection) {
+        return false;
+      }
+
+      this._setAnchor(activeSection);
+
+      this._handleSectionTransition(activeSection);
+
+      this._addActiveClass();
+    }
+  }, {
+    key: "_handleTouchNav",
+    value: function _handleTouchNav() {
+      var that = this;
+
+      var touchsurface = document.querySelector("." + this.props.className),
+          swipedir,
+          startX,
+          startY,
+          dist,
+          distX,
+          distY,
+          threshold = 50,
+          //required min distance traveled to be considered swipe
+      restraint = 100,
+          // maximum distance allowed at the same time in perpendicular direction
+      allowedTime = 1000,
+          // maximum time allowed to travel that distance
+      elapsedTime,
+          startTime,
+          handleswipe = function handleswipe(swipedir) {
+        console.log(swipedir);
+      };
+
+      touchsurface.addEventListener('touchstart', function (e) {
+        var touchobj = e.changedTouches[0];
+        swipedir = 'none';
+        dist = 0;
+        startX = touchobj.pageX;
+        startY = touchobj.pageY;
+        startTime = new Date().getTime(); // record time when finger first makes contact with surface
+        // e.preventDefault()
+      }, false);
+      touchsurface.addEventListener('touchmove', function (e) {
+        e.preventDefault(); // prevent scrolling when inside DIV
+      }, false);
+      touchsurface.addEventListener('touchend', function (e) {
+        var touchobj = e.changedTouches[0];
+        distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+
+        distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+
+        elapsedTime = new Date().getTime() - startTime; // get time elapsed
+
+        if (elapsedTime <= allowedTime) {
+          // first condition for awipe met
+          if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) {
+            // 2nd condition for vertical swipe met
+            swipedir = distY < 0 ? 'up' : 'down'; // if dist traveled is negative, it indicates up swipe
+
+            var direction = swipedir === 'down' ? that.state.activeSection - 1 : swipedir === 'up' ? that.state.activeSection + 1 : -1;
+            var hash = that.props.anchors[direction];
+
+            if (!that.props.anchors.length || hash) {
+              window.location.hash = '#' + hash;
+            }
+
+            that._handleSectionTransition(direction);
+          }
+        }
+
+        handleswipe(swipedir); // e.preventDefault()
+      }, false);
+    }
+  }, {
+    key: "_handleAnchor",
+    value: function _handleAnchor() {
+      var _this3 = this;
+
+      var hash = window.location.hash.substring(1);
+      var activeSection = this.props.anchors.indexOf(hash);
+
+      if (this.state.activeSection !== activeSection) {
+        setTimeout(function () {
+          _this3._handleSectionTransition(activeSection);
+
+          _this3._addActiveClass();
+        });
+      }
+    }
+  }, {
+    key: "_setAnchor",
+    value: function _setAnchor(index) {
+      var hash = this.props.anchors[index];
+
+      if (!this.props.anchors.length || hash) {
+        window.location.hash = '#' + hash;
+      }
+    }
+  }, {
+    key: "_handleScrollCallback",
+    value: function _handleScrollCallback() {
+      var _this4 = this;
+
+      if (this.props.scrollCallback) {
+        setTimeout(function () {
+          return _this4.props.scrollCallback(_this4.state);
+        }, 0);
+      }
+    }
+  }, {
+    key: "_resetScroll",
+    value: function _resetScroll() {
+      var _this5 = this;
+
+      this._clearResetScrollTimer();
+
+      this._resetScrollTimer = setTimeout(function () {
+        _this5.setState({
+          scrollingStarted: false
+        });
+      }, this.props.delay + 300);
+    }
+  }, {
+    key: "_clearResetScrollTimer",
+    value: function _clearResetScrollTimer() {
+      if (this._resetScrollTimer) {
+        clearTimeout(this._resetScrollTimer);
+      }
+    }
+  }, {
+    key: "renderNavigation",
+    value: function renderNavigation() {
+      var _this6 = this;
+
+      var navigationStyle = {
+        position: 'fixed',
+        zIndex: '10',
+        right: '20px',
+        top: '50%',
+        transform: 'translate(-50%, -50%)'
+      };
+      var anchors = this.props.anchors.map(function (link, index) {
+        var anchorStyle = {
+          display: 'block',
+          margin: '10px',
+          borderRadius: '100%',
+          backgroundColor: '#556270',
+          padding: '5px',
+          transition: 'all 0.2s',
+          transform: _this6.state.activeSection === index ? 'scale(1.3)' : 'none'
+        };
+        return _react.default.createElement("a", {
+          href: "#".concat(link),
+          key: index,
+          className: _this6.props.navigationAnchorClass || 'Navigation-Anchor',
+          style: _this6.props.navigationAnchorClass ? null : anchorStyle
+        });
+      });
+      return _react.default.createElement("div", {
+        className: this.props.navigationClass || 'Navigation',
+        style: this.props.navigationClass ? null : navigationStyle
+      }, anchors);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var containerStyle = {
+        height: '100%',
+        width: '100%',
+        position: 'relative',
+        transform: "translate3d(0px, ".concat(this.state.sectionScrolledPosition, "px, 0px)"),
+        transition: "all ".concat(this.props.delay, "ms ease")
+      };
+      return _react.default.createElement("div", null, _react.default.createElement("div", {
+        className: this.props.className,
+        style: containerStyle
+      }, this.props.scrollBar ? this._addChildrenWithAnchorId() : this.props.children), this.props.navigation && !this.props.scrollBar ? this.renderNavigation() : null);
+    }
+  }]);
+
+  return SectionsContainer;
+}(_react.default.Component);
 
 exports.default = SectionsContainer;
 SectionsContainer.defaultProps = {
@@ -19539,6 +19693,8 @@ module.exports = function() {
 "use strict";
 
 
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19554,61 +19710,150 @@ function _interopRequireDefault(obj) {
   };
 }
 
-class Section extends _react.default.Component {
-  constructor() {
-    super();
-    this.state = {
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+var Section =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Section, _React$Component);
+
+  function Section() {
+    var _this;
+
+    _classCallCheck(this, Section);
+
+    _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this));
+    _this.state = {
       windowHeight: 0
     };
-    this.handleResize = this.handleResize.bind(this);
+    _this.handleResize = _this.handleResize.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
-  handleResize() {
-    this.setState({
-      windowHeight: window.innerHeight
-    });
-  }
+  _createClass(Section, [{
+    key: "handleResize",
+    value: function handleResize() {
+      this.setState({
+        windowHeight: window.innerHeight
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.handleResize();
+      window.addEventListener('resize', this.handleResize);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.handleResize);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var alignVertical = this.props.verticalAlign || this.context.verticalAlign;
+      var sectionStyle = {
+        width: '100%',
+        display: alignVertical ? 'table' : 'block',
+        height: this.state.windowHeight,
+        maxHeight: this.state.windowHeight,
+        overflow: 'auto',
+        backgroundColor: this.props.color,
+        paddingTop: this.context.sectionPaddingTop,
+        paddingBottom: this.context.sectionPaddingBottom
+      };
+      return _react.default.createElement("div", {
+        className: this.context.sectionClassName + (this.props.className ? " ".concat(this.props.className) : ''),
+        id: this.props.id,
+        style: sectionStyle
+      }, alignVertical ? this._renderVerticalAlign() : this.props.children);
+    }
+  }, {
+    key: "_renderVerticalAlign",
+    value: function _renderVerticalAlign() {
+      var verticalAlignStyle = {
+        display: 'table-cell',
+        verticalAlign: 'middle',
+        width: '100%'
+      };
+      return _react.default.createElement("div", {
+        style: verticalAlignStyle
+      }, this.props.children);
+    }
+  }]);
 
-  componentDidMount() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  render() {
-    const alignVertical = this.props.verticalAlign || this.context.verticalAlign;
-    const sectionStyle = {
-      width: '100%',
-      display: alignVertical ? 'table' : 'block',
-      height: this.state.windowHeight,
-      maxHeight: this.state.windowHeight,
-      overflow: 'auto',
-      backgroundColor: this.props.color,
-      paddingTop: this.context.sectionPaddingTop,
-      paddingBottom: this.context.sectionPaddingBottom
-    };
-    return _react.default.createElement("div", {
-      className: this.context.sectionClassName + (this.props.className ? ` ${this.props.className}` : ''),
-      id: this.props.id,
-      style: sectionStyle
-    }, alignVertical ? this._renderVerticalAlign() : this.props.children);
-  }
-
-  _renderVerticalAlign() {
-    const verticalAlignStyle = {
-      display: 'table-cell',
-      verticalAlign: 'middle',
-      width: '100%'
-    };
-    return _react.default.createElement("div", {
-      style: verticalAlignStyle
-    }, this.props.children);
-  }
-
-}
+  return Section;
+}(_react.default.Component);
 
 Section.propTypes = {
   color: _propTypes.default.string
@@ -19629,6 +19874,8 @@ exports.default = _default;
 "use strict";
 
 
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19642,16 +19889,95 @@ function _interopRequireDefault(obj) {
   };
 }
 
-class ScrollToTopOnMount extends _react.default.Component {
-  componentDidMount(prevProps) {
-    window.scrollTo(0, 0);
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
   }
 
-  render() {
-    return null;
-  }
-
+  return _typeof(obj);
 }
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var ScrollToTopOnMount =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ScrollToTopOnMount, _React$Component);
+
+  function ScrollToTopOnMount() {
+    _classCallCheck(this, ScrollToTopOnMount);
+
+    return _possibleConstructorReturn(this, (ScrollToTopOnMount.__proto__ || Object.getPrototypeOf(ScrollToTopOnMount)).apply(this, arguments));
+  }
+
+  _createClass(ScrollToTopOnMount, [{
+    key: "componentDidMount",
+    value: function componentDidMount(prevProps) {
+      window.scrollTo(0, 0);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return ScrollToTopOnMount;
+}(_react.default.Component);
 
 var _default = ScrollToTopOnMount;
 exports.default = _default;
@@ -19663,6 +19989,8 @@ exports.default = _default;
 "use strict";
 
 
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19676,20 +20004,98 @@ function _interopRequireDefault(obj) {
   };
 }
 
-class Header extends _react.default.Component {
-  render() {
-    const headerStyle = {
-      position: 'fixed',
-      width: '100%',
-      zIndex: '1',
-      top: '0'
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
     };
-    return _react.default.createElement("header", {
-      style: headerStyle
-    }, this.props.children);
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
   }
 
+  return _typeof(obj);
 }
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Header =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Header, _React$Component);
+
+  function Header() {
+    _classCallCheck(this, Header);
+
+    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+  }
+
+  _createClass(Header, [{
+    key: "render",
+    value: function render() {
+      var headerStyle = {
+        position: 'fixed',
+        width: '100%',
+        zIndex: '1',
+        top: '0'
+      };
+      return _react.default.createElement("header", {
+        style: headerStyle
+      }, this.props.children);
+    }
+  }]);
+
+  return Header;
+}(_react.default.Component);
 
 var _default = Header;
 exports.default = _default;
@@ -19701,6 +20107,8 @@ exports.default = _default;
 "use strict";
 
 
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19714,20 +20122,98 @@ function _interopRequireDefault(obj) {
   };
 }
 
-class Footer extends _react.default.Component {
-  render() {
-    const footerStyle = {
-      position: 'fixed',
-      width: '100%',
-      zIndex: '1',
-      bottom: '0'
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
     };
-    return _react.default.createElement("footer", {
-      style: footerStyle
-    }, this.props.children);
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
   }
 
+  return _typeof(obj);
 }
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Footer =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Footer, _React$Component);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      var footerStyle = {
+        position: 'fixed',
+        width: '100%',
+        zIndex: '1',
+        bottom: '0'
+      };
+      return _react.default.createElement("footer", {
+        style: footerStyle
+      }, this.props.children);
+    }
+  }]);
+
+  return Footer;
+}(_react.default.Component);
 
 var _default = Footer;
 exports.default = _default;
